@@ -6,6 +6,9 @@ name := "sbt-getting-started"
 version := "1.0"
 
 lazy val calculators = project
+    .settings(
+        libraryDependencies += ("org.scalatest" %% "scalatest" % "3.0.5" % Test)
+    )
 
 lazy val api = project
     .settings(
