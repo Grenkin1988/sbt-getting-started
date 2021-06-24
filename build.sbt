@@ -6,12 +6,14 @@ name := "sbt-getting-started"
 version := "1.0"
 
 lazy val calculators = project
-    .dependsOn(api)
-    .settings(
-        libraryDependencies ++= Dependencies.calculatorDependencies
-    )
+  .dependsOn(api)
+  .enablePlugins(JavaAppPackaging)
+  .settings(
+    libraryDependencies ++= Dependencies.calculatorDependencies
+  )
 
 lazy val api = project
-    .settings(
-        libraryDependencies ++= Dependencies.apiDependencies
-    )
+  .enablePlugins(JavaAppPackaging)
+  .settings(
+    libraryDependencies ++= Dependencies.apiDependencies
+  )
