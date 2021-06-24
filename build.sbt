@@ -5,6 +5,7 @@ name := "sbt-getting-started"
 
 version := "1.0"
 
-val root = project.in(file("."))
+lazy val root = project.in(file("."))
+    .aggregate(calculators)
 
-val calculators = project
+lazy val calculators = project
